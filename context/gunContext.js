@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useState, useReducer } from "react";
 import Gun from "gun";
 
 const gun = Gun(["https://discord-gun-node.herokuapp.com/gun"]);

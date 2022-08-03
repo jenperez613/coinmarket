@@ -52,7 +52,7 @@ const Chat = () => {
     if (message.trim() === "") return;
 
     // const messagesRef = gun.get('GUN_REF')
-    // const messagesRef = gun.get("GUN_REF_2")
+    //const messagesRef = gun.get("GUN_REF_2")
 
     const messagesRef = gun.get("GUN_REF_7");
 

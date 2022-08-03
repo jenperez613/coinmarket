@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import { useMoralis } from "react-moralis";
-
 import { useMoralisQuery } from "react-moralis";
 import {
   dogeAbi,
@@ -25,8 +24,8 @@ export const CoinMarketProvider = ({ children }) => {
 
   const [currentAccount, setCurrentAccount] = useState("");
   const [openBuyCryptoModal, setOpenBuyCryptoModal] = useState(false);
-  const [fromToken, setFromToken] = useState("ETH");
-  const [toToken, setToToken] = useState("");
+  const [fromToken, setFromToken] = useState("");
+  const [toToken, setToToken] = useState("Dai");
   const [amount, setAmount] = useState("");
 
   useEffect(() => {
@@ -38,21 +37,21 @@ export const CoinMarketProvider = ({ children }) => {
 
   const getContractAddress = () => {
     if (fromToken === "Dai") return daiAddress;
-    if (fromToken === "Dogecoin") return dogeAddress;
+    if (fromToken === "DogeCoin") return dogeAddress;
     if (fromToken === "Link") return linkAddress;
-    if (fromToken === "usdc") return usdcAddress;
+    if (fromToken === "Usdc") return usdcAddress;
   };
 
   const getToAddress = () => {
     if (toToken === "Dai") return daiAddress;
-    if (toToken === "Dogecoin") return dogeAddress;
+    if (toToken === "DogeCoin") return dogeAddress;
     if (toToken === "Link") return linkAddress;
     if (toToken === "Usdc") return usdcAddress;
   };
 
   const getToAbi = () => {
     if (toToken === "Dai") return daiAbi;
-    if (toToken === "Dogecoin") return dogeAbi;
+    if (toToken === "DogeCoin") return dogeAbi;
     if (toToken === "Link") return linkAbi;
     if (toToken === "Usdc") return usdcAbi;
   };
